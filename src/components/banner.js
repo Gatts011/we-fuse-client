@@ -11,7 +11,7 @@ class Banner extends React.Component {
     axios.get(`http://test.fuseclients.com/api/homepage`).then((res) => {
       const apidata = res.data.banner;
       this.setState({ apidata });
-      console.log(this.state.apidata);
+      // console.log(this.state.apidata);
     });
   }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./fuse.css";
 
@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Banner/>
-      <Route path="/" exact component={Homepage} /> {/*exact (only render this component) */}
-      <Route path="/entry" component={Entry} />      
+      <Route path="/" exact component={Homepage} />      
+      <Route path="/entry/:id" exact component={Entry} />       
       <Footer/>
     </Router>
   );
