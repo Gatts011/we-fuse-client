@@ -21,9 +21,11 @@ class Banner extends React.Component {
     return (
       <ul className="item">
         {this.state.apidata.map((result) => ( //using image id as key,// todo make dynamic var
-          <li key={result.banner.image.id} style={{backgroundImage: `url(${result.banner.image.url})` }}>
+          <li key={result.banner.image.id} style={{ backgroundImage: `url(${result.banner.image.url})` }}>
+           <div>
             <p>{result.banner.excerpt}</p>
             <p>{result.title}</p>
+            </div>
           </li>
         ))}
       </ul>
