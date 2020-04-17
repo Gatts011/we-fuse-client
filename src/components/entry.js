@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-class Entry extends React.Component {
+class Entry extends React.Component { 
+  
 
   state = {
     apidata: [],
@@ -12,14 +13,17 @@ class Entry extends React.Component {
       const apidata = res.data.data[0];
       this.setState({ apidata });
       // console.log(this.props.match.params.id);
-      console.log(this.state.apidata.pageData);
-      
+      console.log(this.state.apidata);      
     });
+    
   }
+  
   render() {
     const html = this.state.apidata.pageData;
+    
     return (
-      <div dangerouslySetInnerHTML={{__html: html}} />
+      
+      <div dangerouslySetInnerHTML={{__html: html}}></div>
     );
   }
 }

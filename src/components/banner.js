@@ -20,8 +20,8 @@ class Banner extends React.Component {
 
   <div className="container">
       <div className="navbar">
-          <div><img alt="" src={Logo}/></div>
-          <div><a href="hotkey.co.za">About</a></div>
+          <div className="navitem"><img alt="" src={Logo}/></div>
+          <div className="navitem"><a href="hotkey.co.za">About</a></div>
       </div>
       <div className="header">
           <h1>{this.state.apidata.title}</h1>
