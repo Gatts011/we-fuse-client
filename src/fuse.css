@@ -76,10 +76,12 @@ body {
   font-size: 30px;
   margin: 0px;
   padding: 0px;
+  list-style: none;
 }
 
-.link{
-  list-style: none;
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .item li div {

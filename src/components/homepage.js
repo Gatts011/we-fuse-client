@@ -11,7 +11,7 @@ class Homepage extends React.Component {
     axios.get(`http://test.fuseclients.com/api/blog/list`).then((res) => {
       const apidata = res.data.data;
       this.setState({ apidata });
-      // console.log(this.state.apidata);
+      console.log(this.state.apidata);
     });
   }
 
@@ -22,16 +22,22 @@ class Homepage extends React.Component {
     return (
       <ul className="item">
         {this.state.apidata.map((
-          result, i //using image id as key,// todo make dynamic var
+          result,
+          i //using image id as key,// todo make dynamic var
         ) => (
           <li
             key={i}
             style={{ backgroundImage: `url(${result.banner.image.url})` }}
           >
             <div>
-              <Link to={`/entry/${result.slug}`}>
-                <p>{result.banner.excerpt}</p>
+              <Link
+                to={`/entry/${result.slug}`}
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <p>{result.category}</p>
                 <p>{result.title}</p>
+                <p>{result.postDate.date}</p>
+                <p>{result.author}</p>
               </Link>
             </div>
           </li>
