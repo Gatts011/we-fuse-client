@@ -5,14 +5,14 @@ import Moment from "moment";
 import { Link } from "react-router-dom";
 
 import "../App.css";
-//no prop here 
+//no prop here
 function Home() {
   useEffect(() => {
     fetchItems();
   }, []);
 
   //sub sub of sub inception//turduckin//postmanftw
-  const [homeData, setHomeData] = useState({ banner: {} }); 
+  const [homeData, setHomeData] = useState({ banner: {} });
   const [listData, setListData] = useState([
     {
       title: "",
@@ -25,7 +25,9 @@ function Home() {
 
   //gobabygo
   const fetchItems = async () => {
-    const homeData = await Axios.get(`http://test.fuseclients.com/api/homepage`);//pls stop autoformatting this wrongliest    
+    const homeData = await Axios.get(
+      `http://test.fuseclients.com/api/homepage`
+    ); //pls stop autoformatting this wrongliest
     setHomeData(homeData.data);
     // console.log(homeData.data);
 
@@ -43,20 +45,24 @@ function Home() {
         background=""
       />
       {/* <Navbar title={homeData.banner.title} description={homeData.banner.description} background={homeData.banner.image.url}/> */}
-    
-      <ul className="item">
-          {listData.map(( // map IS a funstion of listData
-            result,
-            i //++++++++++++,
-          ) => (//unchinease this 1 day never
-            <li className="liImage"
-              key={i}
-              style={{ backgroundImage: `url(${result.banner.image.url})` }}
-            >
-              <Link className="link" to={`/entry/${result.slug}`}>
-                <div className="copy">
+
+      {listData.map((
+        // map IS a funstion of listData
+        result,
+        i //++++++++++++, //unchinease this 1 day never
+      ) => (
+        <div className="parent">
+          <div
+            class="child"
+            key={i}
+            style={{ backgroundImage: `url(${result.banner.image.url})` }}
+          >
+            <div class="uncle">
+              <Link className="anchor" to={`/entry/${result.slug}`}>                
                   <p style={{ fontSize: "15px" }}>{result.category}</p>
-                  <p style={{ fontSize: "40px" }}>{result.title}</p>
+
+                  <p style={{margin: 0, alignItems: "space-between", fontSize: "40px" }}>{result.title}</p>
+
                   <div className="copyrow">
                     <p style={{ fontSize: "10px", padding: "0 1rem 0 1rem" }}>
                       {Moment(result.postDate.date).format("D MMM, YYYY")}
@@ -64,13 +70,15 @@ function Home() {
                     <p style={{ fontSize: "10px", padding: "0 1rem 0 1rem" }}>
                       {result.author}
                     </p>
-                  </div>
+              
                 </div>
               </Link>
-            </li>
-          ))}
-        </ul>
-    
+            </div>
+
+            
+          </div>
+        </div>
+      ))}
     </Fragment>
   );
 }
