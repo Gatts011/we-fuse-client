@@ -1,4 +1,7 @@
 import React from "react";
+import {faBars} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter, faFacebook, faGoogle, faYoutube, faVimeo, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 class Footer extends React.Component {
   render() {
@@ -6,13 +9,19 @@ class Footer extends React.Component {
       <div className="footer">
         <div>
           <div>
-            <p>footer</p>
-            <p>footer</p>
+
+          <p>Call Us (+27 82 818 8181) - Mail info@we-fuse.co.za</p>
+           
+          
           </div>
 
           <div>
-            <p>footer</p>
-            <p>footer</p>
+          <p><FontAwesomeIcon icon={faTwitter}/></p>
+          <p><FontAwesomeIcon icon={faFacebook}/></p>
+          <p><FontAwesomeIcon icon={faGoogle}/></p>
+          <p><FontAwesomeIcon icon={faYoutube}/></p>
+          <p><FontAwesomeIcon icon={faVimeo}/></p>
+          <p><FontAwesomeIcon icon={faLinkedin}/></p>
           </div>
         </div>
       </div>

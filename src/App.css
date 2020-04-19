@@ -17,10 +17,16 @@ body {
   
 }
 
+.popup{
+  display: none;
+ 
+}
+
 .navParent {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 1em;
 }
 
 .navLinks {
@@ -29,6 +35,22 @@ body {
   /* justify-content: space-around; */
   /* align-items: center; */
   list-style: none;
+}
+
+.bars{
+  border:none;
+  background: none;
+  color: white;
+  font-size: larger;
+  margin: 0;
+}
+
+.bars:hover{
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .liLinks {
@@ -112,11 +134,13 @@ padding-top: 5em;
   /* border-top: 1px solid rgb(131, 131, 131); */
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem 0 2rem;
+  padding: 0 1em 0 1em;
 }
 
 .footer > div > div > p {
-  padding: 0.2rem;
+  font-size: 12px;
+  padding: 0.5em;
+  font-style: italic;
 }
 
 
