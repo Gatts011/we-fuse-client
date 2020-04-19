@@ -1,42 +1,57 @@
-import React, { Fragment } from "react";
-import axios from "axios";
-import Header from './header'
+import React, { Fragment, useState, useEffect } from "react";
+import Axios from "axios";
+import Navbar from "./navbar";
+// import Moment from "moment";
 
-class Entry extends React.Component {
+import "../App.css";
 
-  state = {
-    pageData: '',
-    title:'',    
-    desc: '',
-    imageurl:'',
-  };
+function Entry({ match }) {
+  useEffect(() => {
+    //moved/turduckin'd function inside of useEffect because of missing param error
+    //"We moved the function inside the effect so it doesn’t need to be in its dependency list"
+    //https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
+    const fetchItems = async () => {
+      const data = await Axios.get(
+        `http://test.fuseclients.com/api/blog/${match.params.id}`
+      );
 
-  async componentDidMount() {
-    const id = this.props.match.params.id
-    const {data} = await axios.get(`http://test.fuseclients.com/api/blog/${id}`)      
-    this.setState({ 
-      pageData : data.data[0].pageData, 
-      title : data.data[0].banner.title , 
-      desc : data.data[0].banner.description,
-      imageurl : data.data[0].banner.image.url});//oooooof     
-   
-  }
-  render() {
-    // console.log("render" + this.state.apidata);
-    const html = this.state.pageData;
-    const de = this.state.desc;
-    const ti = this.state.title;
-    const iu = this.state.imageurl;
+      setListData(data.data.data);
+     
+    };
 
-    console.log('render')
-    
-    return (
-      <Fragment>
-      <Header title={ti} description={de} background={iu}/>
-      <div className="injected" dangerouslySetInnerHTML={{__html: html}} />
-      </Fragment>
-    )
-  }
+    fetchItems();
+    // console.log(match);
+  }, [match]);
+
+  //following api data format//turduckin//inception
+  const [listData, setListData] = useState([
+    {
+      banner: {        
+        image: {
+          data: {
+
+          },
+        },
+      },
+      pageData: "",
+      postDate: {},
+      author: "",
+      catergory: "",
+    },
+  ]);
+
+  // console.log(listData[0].banner.title);
+
+  return (
+    <Fragment>
+      <Navbar
+    title={listData[0].banner.title} //stuff this shit in there
+    description={listData[0].banner.description}
+    background={listData[0].banner.image.url}
+  />
+  <div className="injected" dangerouslySetInnerHTML={{__html: listData[0].pageData}} />
+    </Fragment>
+  );
 }
 
 export default Entry;
