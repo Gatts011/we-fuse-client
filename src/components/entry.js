@@ -1,30 +1,41 @@
-import React from "react";
+import React, { Fragment } from "react";
 import axios from "axios";
+import Header from './header'
 
-class Entry extends React.Component { 
-  
+class Entry extends React.Component {
 
   state = {
-    apidata: [],
+    pageData: '',
+    title:'',    
+    desc: '',
+    imageurl:'',
   };
 
-  componentDidMount() {
-    axios.get(`http://test.fuseclients.com/api/blog/${this.props.match.params.id}`).then((res) => {
-      const apidata = res.data.data[0];
-      this.setState({ apidata });
-      // console.log(this.props.match.params.id);
-      console.log(this.state.apidata);      
-    });
-    
+  async componentDidMount() {
+    const id = this.props.match.params.id
+    const {data} = await axios.get(`http://test.fuseclients.com/api/blog/${id}`)      
+    this.setState({ 
+      pageData : data.data[0].pageData, 
+      title : data.data[0].banner.title , 
+      desc : data.data[0].banner.description,
+      imageurl : data.data[0].banner.image.url});//oooooof     
+   
   }
-  
   render() {
-    const html = this.state.apidata.pageData;
+    // console.log("render" + this.state.apidata);
+    const html = this.state.pageData;
+    const de = this.state.desc;
+    const ti = this.state.title;
+    const iu = this.state.imageurl;
+
+    console.log('render')
     
     return (
-      
-      <div dangerouslySetInnerHTML={{__html: html}}></div>
-    );
+      <Fragment>
+      <Header title={ti} description={de} background={iu}/>
+      <div className="injected" dangerouslySetInnerHTML={{__html: html}} />
+      </Fragment>
+    )
   }
 }
 

@@ -5,13 +5,13 @@ import "./fuse.css";
 
 import Homepage from "./components/homepage";
 import Entry from "./components/entry";
-import Banner from "./components/banner";
+// import Banner from "./components/banner";
 import Footer from "./components/footer";
+// import Header from "./components/header";
 
 function App() {
   return (
-    <Router>
-      <Banner/>
+    <Router>      
       <Route path="/" exact component={Homepage} />      
       <Route path="/entry/:id" exact component={Entry} />       
       <Footer/>
