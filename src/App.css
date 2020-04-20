@@ -10,11 +10,14 @@ body {
 
 .headerContainer {  
   background: #24252a;
-  color: white;
-  background-size: cover;
+  color: white;  
   text-align: center;
   min-height: 40vh;
-  
+  /* background-attachment: fixed; */         /* probs need image meta*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
 }
 
 .popup {
