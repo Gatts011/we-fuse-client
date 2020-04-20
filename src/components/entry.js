@@ -1,7 +1,18 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Axios from "axios";
 import Navbar from "./navbar";
-// import Moment from "moment";
+import Moment from "moment";
+import {
+  faBars,
+  faFileArchive,
+  faCompressArrowsAlt,
+  faChevronCircleDown,
+  faAngleDown,
+  faFile,
+  faFolderOpen,
+  faCalendar,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../App.css";
 
@@ -16,7 +27,6 @@ function Entry({ match }) {
       );
 
       setListData(data.data.data);
-     
     };
 
     fetchItems();
@@ -26,30 +36,46 @@ function Entry({ match }) {
   //following api data format//turduckin//inception
   const [listData, setListData] = useState([
     {
-      banner: {        
+      banner: {
         image: {
-          data: {
-
-          },
+          data: {},
         },
       },
       pageData: "",
       postDate: {},
       author: "",
-      catergory: "",
+      category: "",
     },
   ]);
 
-  // console.log(listData[0].banner.title);
+  console.log(listData[0].category);
 
   return (
     <Fragment>
       <Navbar
-    title={listData[0].banner.title} //stuff this shit in there
-    description={listData[0].banner.description}
-    background={listData[0].banner.image.url}
-  />
-  <div className="injected" dangerouslySetInnerHTML={{__html: listData[0].pageData}} />
+        title={listData[0].banner.title}
+        description={listData[0].banner.description}
+        background={listData[0].banner.image.url}
+        display="none"
+      />
+      <div className="postinfo">
+        <div className="left">
+          <div>
+            <FontAwesomeIcon icon={faCalendar} className="posticon" />
+            {Moment(listData[0].postDate.date).format("D MMM, YYYY")}
+          </div>
+        </div>
+        <div className="right">
+          <div>
+          <FontAwesomeIcon icon={faFolderOpen} className="posticon" />
+          {listData[0].category}
+          </div>
+        </div>
+      </div>
+      <div
+        className="injected"
+        dangerouslySetInnerHTML={{ __html: listData[0].pageData }}
+      />
     </Fragment>
   );
 }
