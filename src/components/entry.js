@@ -3,12 +3,6 @@ import Axios from "axios";
 import Navbar from "./navbar";
 import Moment from "moment";
 import {
-  faBars,
-  faFileArchive,
-  faCompressArrowsAlt,
-  faChevronCircleDown,
-  faAngleDown,
-  faFile,
   faFolderOpen,
   faCalendar,
 } from "@fortawesome/free-solid-svg-icons";

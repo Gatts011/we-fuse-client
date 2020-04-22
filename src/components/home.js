@@ -45,21 +45,13 @@ function Home() {
         title={homeData.banner.title} //stuff this shit in there
         description={homeData.banner.description}
         background=""
-      />
-      {/* <Navbar title={homeData.banner.title} description={homeData.banner.description} background={homeData.banner.image.url}/> */}
+      />     
 
-      {listData.map((
-        // map IS a funstion of listData
-        result,
-        i //++++++++++++, 
-      ) => ( //unchinease this 1 day never//modules????
-        <div className="parent">
-          <div
-            class="child"
-            key={i}
-            style={{ backgroundImage: `url(${result.banner.image.url})` }}
-          >
-            <div class="uncle">
+      {listData.map((result, i) => ( 
+        ///key goes in parent///always blame the parents 1st
+        <div className="parent" key={i}>
+          <div className="child"  style={{ backgroundImage: `url(${result.banner.image.url})` }}>
+            <div className="uncle">
               <Link className="anchor" to={`/entry/${result.slug}`}>
                 <p style={{ fontSize: "15px" }}>{result.category}</p>
 

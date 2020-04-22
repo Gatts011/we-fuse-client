@@ -1,6 +1,6 @@
 body {
-  padding-left: 20%;
-  padding-right: 20%;
+  /* padding-left: 20%;
+  padding-right: 20%; */
   font-family: "Source Sans Pro"; /* , sans-serif */
 }
 
@@ -12,16 +12,20 @@ body {
   background: #24252a;
   color: white;  
   text-align: center;
-  min-height: 40vh;
-  /* background-attachment: fixed; */         /* probs need image meta*/
-  background-position: center;
+  min-height: 35vh;
+  background-attachment: fixed;         /* probs need image meta*/ 
+  background-position: center -400px;
   background-repeat: no-repeat;
   background-size: cover;
+  
  
 }
 
 .popup {
-  display: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .navParent {
@@ -139,7 +143,7 @@ body {
   bottom: 0;
   color: white;
   background-color: #24252a;
-  padding: 5rem 5rem 0 5rem;
+  padding: 5rem 20% 0 20%;
 }
 
 .footer > div {
