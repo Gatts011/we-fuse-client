@@ -2,30 +2,90 @@ body {
   /* padding-left: 20%;
   padding-right: 20%; */
   font-family: "Source Sans Pro"; /* , sans-serif */
+  height: 100%;
+  background: #24252a;
 }
 
 /* .App {
-  text-align: center;
+  height: 100%;
 } */
 
-.headerContainer {  
+.headerContainer {
   background: #24252a;
-  color: white;  
+  color: white;
   text-align: center;
   min-height: 35vh;
-  background-attachment: fixed;         /* probs need image meta*/ 
-  background-position: center -400px;
+  background-attachment: fixed; /* probs need image meta*/
+  background-position: center -300px;
   background-repeat: no-repeat;
   background-size: cover;
-  
- 
 }
 
 .popup {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  background: #24252a;
+  transition: all 1s;
+  /* display: none; */
+  height: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  width: 55%;
+  margin: auto;
+  list-style: none;
+}
+
+.popup div label {
+  padding-right: 1rem;
+  text-decoration: inherit;
+}
+
+.popup div select {
+  padding-right: 1rem;
+  text-decoration: none;
+  background-color: #24252a;
+  color: white;
+  border-radius: 3px;
+}
+
+.popup a svg{
+  padding-right: 0.3rem;
+}
+
+.popup a {  
+  color: white;
+  text-decoration: none;
+  background: none;
+}
+
+.profile {
+  background: #24252a;
+  transition: all 1s;
+  /* display: none; */
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  overflow: hidden;
+  width: 55%;
+  margin: auto;
+  align-items: flex-end;
+  list-style: none;
+
+  /* border-bottom: 1px solid rgb(131, 131, 131); */
+}
+
+.profile > a {
+  padding-top: 0.3rem;
+  color: white;
+  text-decoration: inherit;
+  background: none;
+}
+
+.profile > select {
+  padding-top: 0.3rem;
+  color: white;
+  text-decoration: inherit;
 }
 
 .navParent {
@@ -33,6 +93,8 @@ body {
   justify-content: space-around;
   align-items: center;
   padding-top: 1em;
+  -webkit-filter: drop-shadow(3px 5px 3px #1a1a1a7c);
+  filter: drop-shadow(3px 5px 3px #1a1a1a7c);
 }
 
 .navLinks {
@@ -41,6 +103,7 @@ body {
   /* justify-content: space-around; */
   /* align-items: center; */
   list-style: none;
+  text-shadow: 3px 5px 7px #1a1a1a;
 }
 
 .bars {
@@ -75,9 +138,9 @@ body {
 .heading {
   padding-top: 1em;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
-  text-shadow: 2px 2px 4px #383838;
+  text-shadow: 3px 5px 7px #1a1a1a;
 }
 
 .headingchild {
@@ -221,55 +284,55 @@ body {
   transform: scale(1.2);
 }
 
-.postinfo{
-  display: flex;  
+.postinfo {
+  display: flex;
   justify-content: center;
-  border-bottom: 1px solid rgb(223, 223, 223);  
+  border-bottom: 1px solid rgb(223, 223, 223);
   font-size: 10px;
   font-style: italic;
+  height: 100%;
+  background: #ffffff;
 }
 
-
-.left{    
+.left {
   padding: 0.5em;
-  color:  rgb(202, 202, 202); 
+  color: rgb(202, 202, 202);
   border-right: 1px solid rgb(223, 223, 223);
   flex: 50%;
 }
-.right{  
-  padding: 0.5em;  
-  color:  rgb(0, 102, 255); 
+.right {
+  padding: 0.5em;
+  color: rgb(0, 102, 255);
   flex: 50%;
 }
 
-.right > div{  
+.right > div {
   padding-left: 10%;
 }
 
-.left > div{  
-padding-left: 50%;
+.left > div {
+  padding-left: 50%;
 }
 
-
-
-.posticon{  
+.posticon {
   padding-right: 1em;
-  color:  rgb(255, 69, 69);
+  color: rgb(255, 69, 69);
 }
 
-
-.injected{  
+.injected {
   display: flex;
   flex-direction: column;
- padding: 0 15vw 0 15vw;
- font-family: "Source Sans Pro";
+  padding: 0 15vw 0 15vw;
+  font-family: "Source Sans Pro";
+
+  background: #ffffff;
 }
 
-.injected pre{
+.injected pre {
   font-style: italic;
 }
 
-.injected li{
+.injected li {
   list-style: none;
   color: rgb(119, 63, 63);
 }

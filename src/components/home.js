@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
-import Navbar from "./navbar";
+import Header from "./header";
 import Moment from "moment";
+
 import { Link } from "react-router-dom";
 import {faUserCog, faUserFriends, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,8 +41,9 @@ function Home() {
   // console.log(listData[0].postDate.date);
 
   return (
-    <Fragment>
-      <Navbar
+    <Fragment>  
+      
+      <Header
         title={homeData.banner.title} //stuff this shit in there
         description={homeData.banner.description}
         background=""

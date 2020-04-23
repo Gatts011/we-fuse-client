@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Axios from "axios";
-import Navbar from "./navbar";
+import Header from "./header";
 import Moment from "moment";
 import {
   faFolderOpen,
@@ -46,7 +46,7 @@ function Entry({ match }) {
 
   return (
     <Fragment>
-      <Navbar
+      <Header
         title={listData[0].banner.title}
         description={listData[0].banner.description}
         background={listData[0].banner.image.url}
