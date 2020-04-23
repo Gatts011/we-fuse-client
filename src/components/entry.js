@@ -15,13 +15,9 @@ function Entry({ match }) {
     //moved/turduckin'd function inside of useEffect because of missing param error
     //"We moved the function inside the effect so it doesn’t need to be in its dependency list"
     //https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
-    const fetchItems = async () => {
-      const data = await Axios.get(
-        `http://test.fuseclients.com/api/blog/${match.params.id}`
-      );
-
-      setListData(data.data.data);
-    };
+    const fetchItems =  () => {
+      Axios.get(`http://test.fuseclients.com/api/blog/${match.params.id}`
+      ).then((response) => { setListData(response.data.data) })}
 
     fetchItems();
     // console.log(match);

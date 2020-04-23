@@ -9,7 +9,7 @@ class Footer extends React.Component {
         <div>
           <div>
 
-          <p>Call Us (+27 82 818 8181) - Mail info@we-fuse.co.za</p>
+          <p>Call Us (+27 82 818 8181) - Mail info@wefuse.co.za</p>
            
           
           </div>

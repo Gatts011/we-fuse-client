@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, {Fragment } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/logo-neurox2.png";
 import { faBars, faAngleDown, faStar } from "@fortawesome/free-solid-svg-icons";
@@ -6,12 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../App.css";
 
-function popup() {
-  alert("show our user links");
-}
-function popup2() {
-  alert("something amazing just happened");
-}
 
 var isMe = false;
 
@@ -88,12 +82,12 @@ const Header = ({ title, description, background, display }) => {
         </div>
         <div id="popup" className="popup">
           <div>
-            <label for="cars">Choose a car:</label>
-            <select id="cars">
-              <option value="volvo">1-10</option>
-              <option value="saab">1-50</option>
-              <option value="mercedes">1-100</option>
-              <option value="audi">1-1000</option>
+            <label htmlFor="show">show:</label>
+            <select id="show">
+              <option value="1-10">1-10</option>
+              <option value="1-50">1-50</option>
+              <option value="1-100">1-100</option>
+              <option value="1-1000">1-1000</option>
             </select>
           </div>
           <a href="#home">
