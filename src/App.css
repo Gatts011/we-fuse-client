@@ -41,11 +41,12 @@ body {
 }
 
 .popup div select {
-  padding-right: 1rem;
+  
   text-decoration: none;
   background-color: #24252a;
   color: white;
   border-radius: 3px;
+  outline: none !important;
 }
 
 .popup a svg{
@@ -71,6 +72,7 @@ body {
   margin: auto;
   align-items: flex-end;
   list-style: none;
+ 
 
   /* border-bottom: 1px solid rgb(131, 131, 131); */
 }
@@ -86,6 +88,7 @@ body {
   padding-top: 0.3rem;
   color: white;
   text-decoration: inherit;
+  
 }
 
 .navParent {
